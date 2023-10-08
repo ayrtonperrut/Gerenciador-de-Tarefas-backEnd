@@ -30,4 +30,14 @@ public class Item {
     @Setter
     @Column(name="tempo")
     private String tempo;
+
+    public Item(Long tarefaId, String nome, String tempo) {
+        this.tarefaId = tarefaId;
+        this.nome = nome;
+        this.tempo = tempo;
+    }
+
+    public Item() {
+
+    }
 }

@@ -6,12 +6,10 @@ import lombok.Getter;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Getter
 public class TarefaDTO {
 
-    @Getter
     private Long id;
-
-    @Getter
     private String titulo;
 
     public TarefaDTO(Tarefa tarefa) {
@@ -19,8 +17,8 @@ public class TarefaDTO {
         this.titulo = tarefa.getTitulo();
     }
 
-    public static List<TarefaDTO> converter(List<Tarefa> fornecedores) {
+    public static List<TarefaDTO> converter(List<Tarefa> tarefas) {
 
-        return fornecedores.stream().map(TarefaDTO::new).collect(Collectors.toList());
+        return tarefas.stream().map(TarefaDTO::new).collect(Collectors.toList());
     }
 }
